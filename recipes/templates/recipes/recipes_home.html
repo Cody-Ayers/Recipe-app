@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>RecipeApp | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'recipes/css/style.css' %}"
+    />
+    <style type="text/css">
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
 
-<head>
-    <title>Home -- Recipe App</title>
-</head>
-
-<body>
-    <h1>Welcome to your favorite Recipe App!</h1>
-</body>
-
+  <body class="body" style="margin-top: 150px">
+    <h1>The Recipe Hub</h1>
+    <div>
+      <a href="\recipes/list" class="list_btn"> List </a>
+    </div>
+  </body>
 </html>
