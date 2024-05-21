@@ -20,13 +20,12 @@
   </head>
 
   <body class="body" style="margin-top: 150px">
-    <div class="landing">
-      <h1>The Recipe Hub</h1>
-
-      <h2>Login to view recipes</h2>
-      <div>
-        <a href="{% url 'login' %}" class="login_btn">Login</a>
-      </div>
+    <div class="auth">
+      <h2 class="success">Successfully Logged Out!</h2>
+      <br />
+      <br />
+      <br />
+      <a class="login_btn" href="{%url 'login' %}">Login</a>
     </div>
   </body>
 </html>

@@ -20,13 +20,14 @@
   </head>
 
   <body class="body" style="margin-top: 150px">
-    <div class="landing">
-      <h1>The Recipe Hub</h1>
-
-      <h2>Login to view recipes</h2>
-      <div>
-        <a href="{% url 'login' %}" class="login_btn">Login</a>
-      </div>
+    <div class="auth">
+      <h1>Login</h1>
+      {# print heading #} {# check for error message #} {% if error_message %}
+      {{error_message}} {% endif %} {# print form #}
+      <form action="" method="POST">
+        {# add Django security token #} {% csrf_token %} {{form}}
+        <button type="submit">Login</button>
+      </form>
     </div>
   </body>
 </html>

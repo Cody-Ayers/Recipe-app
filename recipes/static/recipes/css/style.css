@@ -32,12 +32,45 @@
   width: 50%;
 }
 
-.details {
-  display: block;
+.landing {
   text-align: center;
-  font-size: larger;
-  background-color: antiquewhite;
-  border-radius: 25%;
+  width: 30%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+}
+
+.auth {
+  text-align: center;
+  width: 30%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+  font-family: sans-serif;
+}
+
+.list_table {
+  text-align: center;
+  width: 75%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+}
+
+.recipe_card {
+  text-align: center;
+  width: 55%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
 }
 
 .recipe_name {
@@ -73,16 +106,15 @@
   padding: 10px;
   text-align: center;
 }
-
+.login_btn,
+.logout_btn,
 .back-home_btn {
   width: 50px;
-  font-family: "sans-serif";
-  font-size: 16px;
+  font-size: 18px;
   background-color: rgb(186, 47, 61);
   border-radius: 5px;
   border: 0px;
   color: white;
-  text-decoration: none;
   padding: 10px;
   text-align: center;
 }
@@ -90,17 +122,4 @@
 .list_btn:hover {
   filter: brightness(150%);
   transition: 500ms;
-}
-
-.back-btn {
-  width: 100px;
-  font-family: "sans-serif";
-  font-size: 24px;
-  background-color: rgb(46, 2, 244);
-  border-radius: 5px;
-  color: white;
-  border: 0px;
-  text-decoration: none;
-  padding: 10px;
-  text-align: center;
 }
