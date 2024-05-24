@@ -22,7 +22,15 @@
   <body class="body" style="margin-top: 50px">
     <div class="nav-bar">
       <a class="back-home_btn" href="/home" style="margin: 25px"> Home </a>
-      <a class="logout_btn" href="{% url 'logout' %}">Logout</a>
+      <a
+        class="back-home_btn"
+        href="{% url 'recipes:records' %}"
+        style="margin: 25px"
+        >Search</a
+      >
+      <a class="logout_btn" href="{% url 'logout' %}" style="margin: 25px"
+        >Logout</a
+      >
     </div>
 
     <div class="list_table">

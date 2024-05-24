@@ -123,7 +123,7 @@ LOGIN_URL = '/login/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    'recipes/static'
 ]
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.

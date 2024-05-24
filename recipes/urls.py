@@ -1,13 +1,15 @@
 from django.urls import path
-from .views import home, RecipeListView, RecipeDetailView
+from .views import home, RecipeListView, RecipeDetailView, records
 
 app_name = 'recipes'
 
 urlpatterns = [
-    # THis takes you to home page
+    #Home Page
     path('home/', home, name='home'),
-    # These next two shows you the list of recipes and the details note need to use .as_view()
+    #List of recipes
     path('recipes/list/', RecipeListView.as_view(), name='list'),
-    # note need to use .as_view(), which returns callable view that takes a request and returns the response
+    #Recipe details
     path('recipes/list/<pk>', RecipeDetailView.as_view(), name='detail'),
+    #Search recipes
+    path('recipes/search', records, name='records')
 ]
