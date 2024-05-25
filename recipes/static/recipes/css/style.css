@@ -42,7 +42,8 @@
   margin: 10px auto;
 }
 
-.auth {
+.auth,
+.add_form {
   text-align: center;
   width: 30%;
   background-color: rgba(193, 181, 181, 0.691);

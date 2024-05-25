@@ -1,4 +1,4 @@
-from django.shortcuts import render    # imported by default
+from django.shortcuts import render, redirect    # imported by default
 # Displays list and details
 from django.views.generic import ListView, DetailView
 #import Recipe model
@@ -7,14 +7,18 @@ from .models import Recipe
 from django.contrib.auth.mixins import LoginRequiredMixin
 # to protect function-based views
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
-from .forms import RecipesSearchForm
+from .forms import RecipesSearchForm, AddRecipeForm
 import pandas as pd
 from .utils import get_chart
 
 # Create your views here.
 def home(request):
     return render(request, 'recipes/recipes_home.html')
+
+def profile(request):
+    return render(request, "recipes/profile.html")
 
 
 class RecipeListView(LoginRequiredMixin, ListView):  # class-based view
@@ -47,15 +51,6 @@ def records(request):
         recipe_diff_data = {"#1": "Easy", "#2": "Medium",
                             "#3": "Intermediate", "#4": "Hard"}
         recipe_diff = recipe_diff_data[recipe_diff]
-
-        # if recipe_diff == '#1':
-        #     recipe_diff = 'Easy'
-        # if recipe_diff == '#2':
-        #     recipe_diff = 'Medium'
-        # if recipe_diff == '#3':
-        #     recipe_diff = 'Intermediate'
-        # if recipe_diff == '#4':
-        #     recipe_diff = 'Hard'
 
         qs = Recipe.objects.all()  # apply filter to extract data
         id_searched = []
@@ -94,3 +89,17 @@ def records(request):
     }
     # load the recipes/records.html page using the data that you just prepared
     return render(request, 'recipes/records.html', context)
+
+@login_required
+def add_recipe(request):
+    if request.method == "POST":
+        create_form = AddRecipeForm(request.POST, request.FILES)
+        if create_form.is_valid():
+            create_form.save()
+            messages.success(request, "Recipe created successfully.")
+            return redirect("create")
+    else:
+        create_form = AddRecipeForm()
+
+    context = {"create_form": create_form}
+    return render(request, "recipes/add_recipe.html", context)

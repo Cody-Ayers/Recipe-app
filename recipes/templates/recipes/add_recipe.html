@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RecipeApp | Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'recipes/css/style.css' %}"
+    />
+  </head>
+
+  <body class="body" style="margin-top: 25px">
+    <div class="nav-bar">
+      <a class="back-home_btn" href="/home" style="margin: 25px"> Home </a>
+      <a class="logout_btn" href="{% url 'logout' %}" style="margin: 25px"
+        >Logout</a
+      >
+      <a
+        class="back-home_btn"
+        href="{% url 'recipes:profile' %}"
+        style="margin: 25px"
+        >Profile</a
+      >
+      <a
+        class="back-home_btn"
+        href="{% url 'recipes:records' %}"
+        style="margin: 25px"
+        >Search</a
+      >
+      <a
+        class="back-home_btn"
+        href="{%url 'recipes:list' %}"
+        style="margin: 25px"
+      >
+        List
+      </a>
+    </div>
+
+    <h1>Create a Recipe</h1>
+    <h2>All fields are required.</h2>
+
+    {% if messages %} {% for message in messages %}
+    <script>
+      alert("{{ message }}");
+    </script>
+    {% endfor %} {% endif %}
+
+    <form action="" method="POST" class="add_form">
+      {% csrf_token %}
+      <div class="form-field">
+        <label for="id_name">Name:</label>
+        {{ create_form.name }}
+      </div>
+      <div class="form-field">
+        <label for="id_cooking_time">Cooking time (min):</label>
+        {{ create_form.cooking_time }}
+      </div>
+      <div class="form-field">
+        <label for="id_ingredients">Ingredients:</label>
+        {{ create_form.ingredients }}
+      </div>
+      <div class="form-field">
+        <label for="id_description">Description:</label>
+        {{ create_form.description }}
+      </div>
+      <div class="form-field">
+        <label for="id_pic">Picture:</label>
+        {{ create_form.pic }}
+      </div>
+      <button type="submit" class="create-btn">Create</button>
+    </form>
+  </body>
+</html>
