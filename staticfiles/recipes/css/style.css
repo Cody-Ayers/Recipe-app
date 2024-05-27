@@ -1,0 +1,126 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  padding: 0;
+  font-size: larger;
+  color: darkred;
+}
+
+.h1 {
+  font-size: larger;
+  color: peru;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  margin: bottom 20px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.nav-bar .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.landing {
+  text-align: center;
+  width: 30%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+}
+
+.auth,
+.add_form {
+  text-align: center;
+  width: 30%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+  font-family: sans-serif;
+}
+
+.list_table {
+  text-align: center;
+  width: 75%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+}
+
+.recipe_card {
+  text-align: center;
+  width: 55%;
+  background-color: rgba(193, 181, 181, 0.691);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 5px 10px 15px;
+  margin: 10px auto;
+}
+
+.recipe_name {
+  color: peru;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.details_body {
+  display: flex;
+}
+
+.details_short,
+.details_long {
+  padding: 8px;
+}
+
+.recipe_name {
+  font-weight: 900;
+  color: darkred;
+  text-decoration: none;
+}
+
+.list_btn {
+  width: 50px;
+  font-family: "sans-serif";
+  font-size: 16px;
+  background-color: rgb(186, 47, 61);
+  border-radius: 5px;
+  border: 0px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+}
+.login_btn,
+.logout_btn,
+.back-home_btn {
+  width: 50px;
+  font-size: 18px;
+  background-color: rgb(186, 47, 61);
+  border-radius: 5px;
+  border: 0px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.list_btn:hover {
+  filter: brightness(150%);
+  transition: 500ms;
+}
