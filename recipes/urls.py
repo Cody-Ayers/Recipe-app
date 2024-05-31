@@ -5,7 +5,7 @@ app_name = 'recipes'
 
 urlpatterns = [
     #Home Page
-    path('home/', home, name='home'),
+    path('', home, name='home'),
     #List of recipes
     path('recipes/list/', RecipeListView.as_view(), name='list'),
     #Recipe details
