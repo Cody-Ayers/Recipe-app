@@ -21,7 +21,13 @@
 
   <body class="body" style="margin-top: 25px">
     <div class="nav-bar">
-      <a class="back-home_btn" href="/home" style="margin: 25px"> Home </a>
+      <a
+        class="back-home_btn"
+        href="{% url 'recipes:home' %}"
+        style="margin: 25px"
+      >
+        Home
+      </a>
       <a class="logout_btn" href="{% url 'logout' %}">Logout</a>
       <a
         class="back-home_btn"

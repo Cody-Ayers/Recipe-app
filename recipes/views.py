@@ -92,14 +92,18 @@ def records(request):
 
 @login_required
 def add_recipe(request):
+    print("add_recipe view function is called")
     if request.method == "POST":
+        print("POST request received")
         create_form = AddRecipeForm(request.POST, request.FILES)
         if create_form.is_valid():
             create_form.save()
             messages.success(request, "Recipe created successfully.")
-            return redirect("create")
+            return redirect('recipes:add_recipe')  # Corrected redirect name
     else:
+        print("GET request received")
         create_form = AddRecipeForm()
 
     context = {"create_form": create_form}
     return render(request, "recipes/add_recipe.html", context)
+

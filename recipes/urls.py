@@ -15,5 +15,5 @@ urlpatterns = [
     #Profile page
     path('recipes/profile', profile, name='profile'),
     #Adding recipes
-    path('recipes/add_recipe', add_recipe, name='add recipe')
+    path('recipes/add_recipe', add_recipe, name='add_recipe')
 ]
