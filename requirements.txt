@@ -1,5 +1,4 @@
 asgiref==3.8.1
-backports.zoneinfo==0.2.1
 contourpy==1.3.0
 cycler==0.12.1
 dj-database-url==2.1.0
