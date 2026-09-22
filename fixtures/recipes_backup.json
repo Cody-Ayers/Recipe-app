@@ -1,0 +1,255 @@
+[
+{
+  "model": "recipes.recipe",
+  "pk": 1,
+  "fields": {
+    "name": "Tacos",
+    "cooking_time": 16.0,
+    "ingredients": "Ground Beef, Taco seasoning, tortillas, cheese, tomato, onion",
+    "description": "First cook the ground beef in a pan and add the taco seasoning cooking the beef all the way through.  Add meat, cheese, tomato, onion to the tortilla and then fold and enjoy!",
+    "pic": "recipes/Tacos.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 2,
+  "fields": {
+    "name": "Pesto Pasta",
+    "cooking_time": 14.0,
+    "ingredients": "Pasta, water, pesto",
+    "description": "Bring water to a boil and add pasta to the water.  Cook the pasta until al dente. Drain the noodles and then add back to the pot.  Add a scoop of pesto sauce to the pot and mix with the pasta and enjoy!",
+    "pic": "recipes/Pesto_Pasta.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 3,
+  "fields": {
+    "name": "Tea",
+    "cooking_time": 5.0,
+    "ingredients": "Tea-leaves, water, sugar, cream",
+    "description": "Boil water and add to desired cup.  Add the tea-leaves to the boiling water as well as the sugar and cream. stir to mix and enjoy!",
+    "pic": "recipes/Tea.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 4,
+  "fields": {
+    "name": "Bean burrito",
+    "cooking_time": 35.0,
+    "ingredients": "Tortillas, refried beans, cheese, enchilada sauce",
+    "description": "Add scoop of refried beans, 1/4 cup cheese to a tortilla. Roll the tortilla up in to a burrito and add to backing pan. continue until 6 burritos are in the pan.  Then pour one can of enchilada sauce over the burritos and put in the oven at 350 for 30 minutes.  Serve with the toppings of your choice.",
+    "pic": "recipes/Bean_Burrito.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 5,
+  "fields": {
+    "name": "Pulled Pork Sandwich",
+    "cooking_time": 240.0,
+    "ingredients": "Pork tenderloin, 1 can of coke, salt, pepper, BBQ sauce",
+    "description": "In a crockpot add the pork tenderloin, can of coke, salt, pepper and 1/2 bottle of your favorite BBQ sauce. Cover and cook on high for 4 hours.  Once cooked using two forks shred the pork and then add the remaining 1/2 bottle of bbq sauce.  Get your favorite bread or eat it without.",
+    "pic": "recipes/Pulled_Pork.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 6,
+  "fields": {
+    "name": "Mac and Cheese",
+    "cooking_time": 15.0,
+    "ingredients": "Noodles, Cheese, Butter, Milk,",
+    "description": "Boil a pot of water and cook noodles until done.  Drain water then add your butter, milk and cheese and stir until mixed well.",
+    "pic": "recipes/Mac_and_cheese.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 7,
+  "fields": {
+    "name": "Pasta Salad",
+    "cooking_time": 12.0,
+    "ingredients": "Ziti Noodles, Peperoni, Zucchini, Tomato, Peppers, Cheese, Greek Dressing",
+    "description": "Cook Noodles to desired doneness.  As noodles are cooking cut up the rest of the ingredients.  Once noodles are done and drained. Add everything into a bowl and add the dressing and mix.",
+    "pic": "recipes/Pasta_salad.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 8,
+  "fields": {
+    "name": "Chicken Chili",
+    "cooking_time": 480.0,
+    "ingredients": "Chicken, Onion, Black Beans, Kidney Beans, Garbanzo Beans, Diced Tomatos, Corn",
+    "description": "Spray your crockpot with cooking spray and add the ingredients and cover with taco seasoning.  Let cook for 5-6 hours.  Once chicken is cooked through shred and continue cooking for another 1-2 hours stirring occasionaly.",
+    "pic": "recipes/Chicken_chili.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 9,
+  "fields": {
+    "name": "Chili",
+    "cooking_time": 420.0,
+    "ingredients": "Ground Beef, Sausage, Onion, Bell Peppers, Diced Tomato, Cheese",
+    "description": "Brown the ground beef and sausage in a pan then add to crock pot.  As meat is browning cut up veggies and add them to the crockpot. Let cook for 7 hours stirring occasionally. Serve and top with cheese.",
+    "pic": "recipes/Chili.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 10,
+  "fields": {
+    "name": "Bagel and Cream Cheese",
+    "cooking_time": 2.0,
+    "ingredients": "Bagel, Cream Cheese",
+    "description": "Cut your bagel in half and put in your toaster. Once cooked to desired doneness remove and add cream cheese.",
+    "pic": "recipes/Bagel.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 11,
+  "fields": {
+    "name": "Nachos",
+    "cooking_time": 15.0,
+    "ingredients": "Ground Beef, Tortilla chips, refried beans, cheese",
+    "description": "Cook ground beef and add taco seasoning.  Once cooked put a layer of tortilla chips in a pan.  Top the chips with beans, beef and cheese and put in oven at 375 degrees for 5 mins.  Top with your favorite toppings.",
+    "pic": "recipes/Nachos.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 12,
+  "fields": {
+    "name": "Steak and fries",
+    "cooking_time": 16.0,
+    "ingredients": "Steak and French Fries",
+    "description": "Heat grill to 400 degrees.  Cook steak for 5 minutes each size(or until desired doneness). Put fries in the oven and cook while steaks are cooking",
+    "pic": "recipes/Steak.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 13,
+  "fields": {
+    "name": "Cheese Quesidilla",
+    "cooking_time": 4.0,
+    "ingredients": "Tortilla and Cheese",
+    "description": "Heat pan to medium heat.  Add cheese to inside of the tortilla and cook for 2 mins each side to melt cheese and then serve.",
+    "pic": "recipes/Cheese_quesilla.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 14,
+  "fields": {
+    "name": "Cheeseburger",
+    "cooking_time": 12.0,
+    "ingredients": "Ground Beef, Cheese, Tomato, Onion, Lettuce",
+    "description": "Form ground beef into a round patty and put on grill.  Grill for 5 mins on each side.  Once the burger is cooked add cheese to melt.  Then put patty on bun and add toppings to your liking.",
+    "pic": "recipes/Cheeseburger.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 15,
+  "fields": {
+    "name": "Ham Sandwhich",
+    "cooking_time": 3.0,
+    "ingredients": "Bread, Ham, Cheese, Lettuce, Mayo, Mustard",
+    "description": "Spread the mayo and mustard on the slices of bread.  Then add cheese, ham and lettuce.  Cut in half and eat!",
+    "pic": "recipes/Ham_sandwhich.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 16,
+  "fields": {
+    "name": "Chicken Caesar Salad",
+    "cooking_time": 15.0,
+    "ingredients": "Chicken, Romaine Lettuce, Caesar Dressing, Croutons",
+    "description": "Season chicken to liking and grill until internal temp is 165 degrees. Wash and cut up lettuce and put in to bowl.  Cut cooked chicken and add to bowl along with croutons.  Top with dressing to taste!",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 17,
+  "fields": {
+    "name": "Chicken Caesar Salad",
+    "cooking_time": 15.0,
+    "ingredients": "Chicken, Romaine Lettuce, Caesar Dressing, Croutons",
+    "description": "Season chicken to liking and grill until internal temp is 165 degrees. Wash and cut up lettuce and put in to bowl.  Cut cooked chicken and add to bowl along with croutons.  Top with dressing to taste!",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 18,
+  "fields": {
+    "name": "Pizza",
+    "cooking_time": 15.0,
+    "ingredients": "Dough, Cheese, Pepperoni, Tomato Sauce",
+    "description": "This is a classic pepperoni pizza recipe. It's made with a homemade crust, tomato sauce, mozzarella cheese, and pepperoni.",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 19,
+  "fields": {
+    "name": "Pizza",
+    "cooking_time": 15.0,
+    "ingredients": "Dough, Cheese, Pepperoni, Tomato Sauce",
+    "description": "This is a classic pepperoni pizza recipe. It's made with a homemade crust, tomato sauce, mozzarella cheese, and pepperoni.",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 20,
+  "fields": {
+    "name": "Pizza",
+    "cooking_time": 15.0,
+    "ingredients": "Dough, Cheese, Pepperoni, Tomato Sauce",
+    "description": "This is a classic pepperoni pizza recipe. It's made with a homemade crust, tomato sauce, mozzarella cheese, and pepperoni.",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 21,
+  "fields": {
+    "name": "Pizza",
+    "cooking_time": 15.0,
+    "ingredients": "Dough, Cheese, Pepperoni, Tomato Sauce",
+    "description": "testings",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 22,
+  "fields": {
+    "name": "Pizza",
+    "cooking_time": 15.0,
+    "ingredients": "Dough, Cheese, Pepperoni, Tomato Sauce",
+    "description": "testings",
+    "pic": "no-image.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 23,
+  "fields": {
+    "name": "testing",
+    "cooking_time": 12.0,
+    "ingredients": "this, that, the other",
+    "description": "posting",
+    "pic": "no-image.jpg"
+  }
+}
+]
