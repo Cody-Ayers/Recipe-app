@@ -1,6 +1,6 @@
-# Recipe App
+# Recipe Manager Application
 
-A full-stack Django web application that allows users to create, manage, and analyze recipes. Users can store ingredients, cooking instructions, preparation times, and images while tracking recipe information through an intuitive interface.
+A Django web application that allows users to create, manage, and view recipes through a web interface. Users can store ingredients, cooking instructions, preparation times, recipe images, and recipe-related data within a centralized application.
 
 ## Live Application
 
@@ -8,35 +8,18 @@ A full-stack Django web application that allows users to create, manage, and ana
 
 ---
 
-# Features
+# Project Overview
 
-## User Authentication
+The Recipe Manager Application was built using Python and Django to provide a user-friendly platform for managing recipe information.
 
-- User registration
-- Login and logout functionality
-- User profile management
-- Secure authentication system
+The application supports:
 
-## Recipe Management
-
-- Create recipes
-- View recipe details
-- Browse recipe collection
-- Store ingredients and cooking instructions
-- Upload and display recipe images
-- Automatically calculate recipe difficulty
-
-## Data Visualization
-
-- Recipe records dashboard
-- Recipe statistics and analytics
-- Visual reports generated with Pandas and Matplotlib
-
-## Media Management
-
-- Upload recipe images
-- Display recipe photos
-- Media file support for production deployment
+- User account creation and authentication
+- Recipe creation and management
+- Recipe image uploads
+- Data reporting and visualization
+- PostgreSQL production deployment
+- Local SQLite development
 
 ---
 
@@ -46,11 +29,17 @@ A full-stack Django web application that allows users to create, manage, and ana
 
 - Python 3.12
 - Django 4.2
+- Gunicorn
 
-## Database
+## Databases
 
-- PostgreSQL (Production)
-- SQLite (Development)
+### Production
+
+- PostgreSQL
+
+### Development
+
+- SQLite
 
 ## Frontend
 
@@ -58,17 +47,49 @@ A full-stack Django web application that allows users to create, manage, and ana
 - CSS3
 - JavaScript
 
-## Data Analysis
+## Data Processing & Visualization
 
 - Pandas
-- Matplotlib
 - NumPy
+- Matplotlib
 
-## Deployment
+## Deployment & Version Control
 
-- Heroku-24
-- Gunicorn
+- Heroku
 - WhiteNoise
+- Git
+- GitHub
+
+---
+
+# Features
+
+## User Accounts
+
+- User registration
+- User login
+- User logout
+- Account management
+
+## Recipe Management
+
+- Create recipes
+- View recipe details
+- Browse recipe collections
+- Store ingredients
+- Store cooking instructions
+- Store preparation and cooking times
+- Upload recipe images
+
+## Reporting & Visualization
+
+- Recipe reporting
+- Recipe data visualization using Pandas and Matplotlib
+
+## Media Management
+
+- Upload recipe images
+- Display uploaded recipe images
 
 ---
 
@@ -107,22 +128,20 @@ recipe_project/
 
 # Installation
 
-## Clone Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Cody-Ayers/Recipe-app.git
 cd Recipe-app
 ```
 
-## Create Virtual Environment
+## Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the environment:
-
-### Mac/Linux
+### macOS / Linux
 
 ```bash
 source venv/bin/activate
@@ -140,25 +159,25 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Run Migrations
+## Apply Database Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-## Create Superuser
+## Create a Superuser
 
 ```bash
 python manage.py createsuperuser
 ```
 
-## Run Development Server
+## Run the Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Visit:
+Open:
 
 ```text
 http://127.0.0.1:8000
@@ -168,7 +187,7 @@ http://127.0.0.1:8000
 
 # Recipe Model
 
-Example model fields:
+The application stores recipe information including:
 
 ```python
 name
@@ -178,7 +197,7 @@ cooking_time
 pic
 ```
 
-Images are uploaded using:
+Recipe images are handled using Django's ImageField:
 
 ```python
 pic = models.ImageField(
@@ -191,13 +210,13 @@ pic = models.ImageField(
 
 # Production Environment
 
-## Database
+## Database Configuration
 
-Production uses:
+Production:
 
-- Heroku PostgreSQL
+- PostgreSQL
 
-Development uses:
+Development:
 
 - SQLite
 
@@ -210,22 +229,38 @@ DJANGO_SECRET_KEY
 
 ---
 
+# Maintenance Activities
+
+During ongoing development and deployment, the following maintenance work was completed:
+
+- Upgraded Heroku stack from Heroku-22 to Heroku-24
+- Upgraded Python runtime from 3.9 to 3.12
+- Updated project dependencies
+- Investigated deployment-related issues
+- Restored recipe data in the PostgreSQL database
+- Restored recipe image assets
+- Updated media file configuration
+- Tested application functionality following updates
+
+---
+
 # Deployment
 
-The application is deployed on Heroku using:
+The application is deployed using:
 
-- Heroku-24 Stack
-- Gunicorn
-- PostgreSQL
+- Heroku-24
 - Python 3.12
+- PostgreSQL
+- Gunicorn
+- WhiteNoise
 
-Deploy updates:
+## Deploy Updates
 
 ```bash
 git push heroku main
 ```
 
-View logs:
+## View Logs
 
 ```bash
 heroku logs --tail -a codys-recipe-app
@@ -233,52 +268,64 @@ heroku logs --tail -a codys-recipe-app
 
 ---
 
-# Recent Maintenance & Recovery
+# Technical Concepts Demonstrated
 
-This project recently underwent a full production maintenance and recovery effort including:
-
-- Migration from Heroku-22 to Heroku-24
-- Python upgrade from 3.9 to 3.12
-- Dependency modernization
-- PostgreSQL database recovery
-- Restoration of 23 recipe records
-- Recovery of recipe image assets
-- Production media file configuration fixes
-- Deployment validation and testing
+- Python Development
+- Django Framework
+- PostgreSQL
+- SQLite
+- User Authentication
+- Database Migrations
+- File Upload Handling
+- Data Processing
+- Data Visualization
+- Cloud Deployment
+- Application Maintenance
+- Version Control
+- Git & GitHub
 
 ---
 
 # Future Improvements
 
-- Recipe categories and tags
+- Recipe categories
 - Search and filtering
 - Favorites functionality
-- User recipe sharing
-- Cloud image storage (AWS S3 or Cloudinary)
-- Enhanced analytics dashboard
-- Mobile-responsive UI improvements
+- Recipe sharing
+- Cloud image storage
+- Additional reporting features
+- Responsive UI improvements
+- REST API implementation
 
 ---
 
 # Screenshots
 
-Add screenshots here after capturing images from the live application.
+Add screenshots after capturing images from the live application.
 
-### Home Page
+## Home Page
 
+```text
 screenshots/home.png
+```
 
-### Recipe List
+## Recipe List
 
+```text
 screenshots/recipes.png
+```
 
-### Recipe Details
+## Recipe Details
 
+```text
 screenshots/details.png
+```
 
-### Analytics Dashboard
+## Reporting Dashboard
 
+```text
 screenshots/analytics.png
+```
 
 ---
 
@@ -286,11 +333,14 @@ screenshots/analytics.png
 
 **Cody Ayers**
 
-GitHub:
+GitHub Profile:
 https://github.com/Cody-Ayers
 
 Repository:
 https://github.com/Cody-Ayers/Recipe-app
+
+Live Application:
+https://codys-recipe-app-f140f86eb127.herokuapp.com/
 
 ---
 
