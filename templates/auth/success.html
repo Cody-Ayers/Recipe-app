@@ -4,28 +4,25 @@
   <head>
     <title>RecipeApp | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 150px">
+  <body class="body">
     <div class="auth">
-      <h2 class="success">Successfully Logged Out!</h2>
-      <br />
-      <br />
-      <br />
-      <a class="login_btn" href="{%url 'login' %}">Login</a>
+      <h2 class="success">You're logged out</h2>
+      <p>Come back for more recipes any time.</p>
+      <a class="login_btn" href="{%url 'login' %}">Log in</a>
     </div>
   </body>
 </html>

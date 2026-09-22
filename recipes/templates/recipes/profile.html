@@ -2,63 +2,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RecipeApp | Search</title>
+    <title>RecipeApp | Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 25px">
+  <body class="body">
     <div class="nav-bar">
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:home' %}"
-        style="margin: 25px"
-      >
-        Home
-      </a>
-      <a class="logout_btn" href="{% url 'logout' %}" style="margin: 25px"
-        >Logout</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:records' %}"
-        style="margin: 25px"
-        >Search</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:add_recipe' %}"
-        style="margin: 25px"
-        >Add</a
-      >
-      <a
-        class="back-home_btn"
-        href="{%url 'recipes:list' %}"
-        style="margin: 25px"
-      >
-        List
-      </a>
+      <a class="brand" href="{% url 'recipes:home' %}">The Recipe Hub</a>
+      <a class="back-home_btn" href="{% url 'recipes:home' %}">Home</a>
+      <a class="back-home_btn" href="{% url 'recipes:records' %}">Search</a>
+      <a class="back-home_btn" href="{% url 'recipes:add_recipe' %}">Add</a>
+      <a class="back-home_btn" href="{%url 'recipes:list' %}">List</a>
+      <a class="logout_btn" href="{% url 'logout' %}">Log out</a>
     </div>
+
     <div class="Profile">
-      <h2><span>About Me</span></h2>
+      <h2>About me</h2>
       <p>
         Welcome to my Django Recipe App. My name is Cody Ayers and I am
-        currently working on my Web Development Course with CareerFoundry Please
-        check out my <a href="https://github.com/Cody-Ayers">Git Hub</a>!
+        currently working on my Web Development Course with CareerFoundry.
+        Please check out my
+        <a href="https://github.com/Cody-Ayers">GitHub</a>.
       </p>
     </div>
-    <br />
   </body>
 </html>

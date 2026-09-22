@@ -4,28 +4,26 @@
   <head>
     <title>RecipeApp | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 150px">
+  <body class="body">
     <div class="landing">
       <h1>The Recipe Hub</h1>
-
-      <h2>Login to view recipes</h2>
+      <p>Log in to see tonight's board.</p>
       <div>
-        <a href="{% url 'login' %}" class="login_btn">Login</a>
+        <a href="{% url 'login' %}" class="login_btn">Log in</a>
       </div>
     </div>
   </body>

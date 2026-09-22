@@ -4,97 +4,56 @@
   <head>
     <title>RecipeApp | List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 50px">
+  <body class="body">
     <div class="nav-bar">
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:home' %}"
-        style="margin: 25px"
-      >
-        Home
-      </a>
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:records' %}"
-        style="margin: 25px"
-        >Search</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:add_recipe' %}"
-        style="margin: 25px"
-        >Add</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:profile' %}"
-        style="margin: 25px"
-        >Profile</a
-      >
-      <a class="logout_btn" href="{% url 'logout' %}" style="margin: 25px"
-        >Logout</a
-      >
+      <a class="brand" href="{% url 'recipes:home' %}">The Recipe Hub</a>
+      <a class="back-home_btn" href="{% url 'recipes:home' %}">Home</a>
+      <a class="back-home_btn" href="{% url 'recipes:records' %}">Search</a>
+      <a class="back-home_btn" href="{% url 'recipes:add_recipe' %}">Add</a>
+      <a class="back-home_btn" href="{% url 'recipes:profile' %}">Profile</a>
+      <a class="logout_btn" href="{% url 'logout' %}">Log out</a>
     </div>
 
     <div class="list_table">
-      <h1 style="display: flex; justify-content: center; margin-top: 50px">
-        Recipes List
-      </h1>
-      <center>
-        <table
-          border="10"
-          cellpadding="5"
-          cellspacing="5"
-          width="900"
-          height="250"
-          justify-content="right"
-        >
-          {%comment%} start of table {% endcomment%}
-          <tr>
-            {% comment%} the tag adds a new row {% endcomment%}
-            <td style="font-family: sans-serif" align=" center">
-              Recipes Titles
-            </td>
-            {% comment%} the td tag adds a column {% endcomment %}
-            <td style="font-family: sans-serif" align=" center">
-              Recipes Images
-            </td>
-          </tr>
-          {% for object in object_list %} {% comment%} now go through the list
-          element-by-element {% endcomment %}
-          <tr>
-            <td align="center">
-              <a class="recipe_name" href="{{object.get_absolute_url}}">
-                {% comment%} add links to recipe names {% endcomment%}
-                {{object.name}}
-              </a>
-            </td>
-            {% comment%} print the name of recipe {% endcomment%}
-            <td>
-              <center>
-                <img src="{{object.pic.url}}" width="250" height="250" />
-              </center>
-            </td>
-            {% comment%} display the picture of recipe {% endcomment%}
-          </tr>
-          {% endfor %}
-        </table>
-      </center>
+      <p style="color: var(--muted); margin: 0 0 4px; font-size: 13px">
+        Tonight's board
+      </p>
+      <h1>What's cooking</h1>
+
+      <div class="recipe-list">
+        {% for object in object_list %}
+        <div class="recipe-row">
+          <img
+            class="recipe-thumb"
+            src="{{object.pic.url}}"
+            alt="{{object.name}}"
+          />
+          <div class="recipe-info">
+            <a class="recipe_name" href="{{object.get_absolute_url}}"
+              >{{object.name}}</a
+            >
+            <div class="cat">{{object.calculate_difficulty}}</div>
+          </div>
+          <div class="time">{{object.cooking_time}} min</div>
+        </div>
+        {% empty %}
+        <p>Nothing on the board yet. Add a recipe to get started.</p>
+        {% endfor %}
+      </div>
     </div>
   </body>
 </html>

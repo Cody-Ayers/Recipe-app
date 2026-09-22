@@ -4,75 +4,54 @@
   <head>
     <title>RecipeApp | Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 50px">
+  <body class="body">
     <div class="nav-bar">
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:home' %}"
-        style="margin: 25px"
-      >
-        Home
-      </a>
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:records' %}"
-        style="margin: 25px"
-        >Search</a
-      >
-      <a class="logout_btn" href="{% url 'logout' %}" style="margin: 25px"
-        >Logout</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:add_recipe' %}"
-        style="margin: 25px"
-        >Add</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:profile' %}"
-        style="margin: 25px"
-        >Profile</a
-      >
-      <a
-        class="back-home_btn"
-        href="{%url 'recipes:list' %}"
-        style="margin: 25px"
-      >
-        List
-      </a>
+      <a class="brand" href="{% url 'recipes:home' %}">The Recipe Hub</a>
+      <a class="back-home_btn" href="{% url 'recipes:home' %}">Home</a>
+      <a class="back-home_btn" href="{% url 'recipes:records' %}">Search</a>
+      <a class="back-home_btn" href="{% url 'recipes:add_recipe' %}">Add</a>
+      <a class="back-home_btn" href="{% url 'recipes:profile' %}">Profile</a>
+      <a class="back-home_btn" href="{%url 'recipes:list' %}">List</a>
+      <a class="logout_btn" href="{% url 'logout' %}">Log out</a>
     </div>
 
-    <div class="details">
-      <h1 style="text-align: center; margin-top: 100px">Recipe Information</h1>
+    <div class="recipe_card">
+      <img
+        class="ticket-photo"
+        src="{{object.pic.url}}"
+        alt="{{object.name}}"
+      />
+      <h1>{{object.name}}</h1>
 
-      <div class="recipe_card">
-        <b>Name: </b> {{object.name}} <br />
-        <br />
-        <b>Cooking Time (min): </b> {{object.cooking_time}} <br />
-        <br />
-        <b>Difficulty: </b> {{object.calculate_difficulty}} <br />
-        <br />
-        <b>Ingredients: </b> {{object.ingredients}} <br />
-        <br />
-        <b>Description: </b> {{object.description}} <br />
-        <br />
-        <img src="{{object.pic.url}}" width="500px" height="500px" />
+      <div class="ticket-row">
+        <div class="l">Cook time</div>
+        <div>{{object.cooking_time}} min</div>
+      </div>
+      <div class="ticket-row">
+        <div class="l">Difficulty</div>
+        <div>{{object.calculate_difficulty}}</div>
+      </div>
+      <div class="ticket-row">
+        <div class="l">Ingredients</div>
+        <div>{{object.ingredients}}</div>
+      </div>
+      <div class="ticket-row">
+        <div class="l">Description</div>
+        <div>{{object.description}}</div>
       </div>
     </div>
   </body>

@@ -4,70 +4,52 @@
   <head>
     <title>RecipeApp | Search</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 25px">
+  <body class="body">
     <div class="nav-bar">
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:home' %}"
-        style="margin: 25px"
-      >
-        Home
-      </a>
-      <a class="logout_btn" href="{% url 'logout' %}" style="margin: 25px"
-        >Logout</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:add_recipe' %}"
-        style="margin: 25px"
-        >Add</a
-      >
-      <a
-        class="back-home_btn"
-        href="{% url 'recipes:profile' %}"
-        style="margin: 25px"
-        >Profile</a
-      >
-      <a
-        class="back-home_btn"
-        href="{%url 'recipes:list' %}"
-        style="margin: 25px"
-      >
-        List
-      </a>
+      <a class="brand" href="{% url 'recipes:home' %}">The Recipe Hub</a>
+      <a class="back-home_btn" href="{% url 'recipes:home' %}">Home</a>
+      <a class="back-home_btn" href="{% url 'recipes:add_recipe' %}">Add</a>
+      <a class="back-home_btn" href="{% url 'recipes:profile' %}">Profile</a>
+      <a class="back-home_btn" href="{%url 'recipes:list' %}">List</a>
+      <a class="logout_btn" href="{% url 'logout' %}">Log out</a>
     </div>
 
-    <h1 style="text-align: center; margin-top: 100px">Recipe Search</h1>
+    <div class="list_table">
+      <p style="color: var(--muted); margin: 0 0 4px; font-size: 13px">
+        Find something to cook
+      </p>
+      <h1>Search the board</h1>
 
-    <hr />
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-field">{{form}}</div>
+        <button type="submit">Search</button>
+      </form>
 
-    <form action="" method="POST">
-      {% csrf_token %} {{form}}
-      <button type="submit">Search</button>
-    </form>
-    <br />
-    <br />
-    {% if recipe_df %} {{recipe_df|safe}}
-    <br />
-    <br />
-    <img src="data:image/png;base64, {{chart|safe}}" alt="chart" />
-    {% else %}
-    <h3>No Data</h3>
-    {% endif %}
+      {% if recipe_df %}
+      <div style="overflow-x: auto; margin-top: 24px">{{recipe_df|safe}}</div>
+      <img
+        style="margin-top: 20px"
+        src="data:image/png;base64, {{chart|safe}}"
+        alt="chart"
+      />
+      {% else %}
+      <h3 style="margin-top: 24px">No data yet — run a search above.</h3>
+      {% endif %}
+    </div>
   </body>
 </html>

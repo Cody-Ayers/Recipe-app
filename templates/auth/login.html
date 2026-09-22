@@ -4,29 +4,30 @@
   <head>
     <title>RecipeApp | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'recipes/css/style.css' %}"
     />
-    <style type="text/css">
-      body {
-        background: url("{% static 'recipes/images/background.jpg' %}")
-          no-repeat fixed;
-        background-size: cover;
-      }
-    </style>
   </head>
 
-  <body class="body" style="margin-top: 150px">
+  <body class="body">
     <div class="auth">
-      <h1>Login</h1>
-      {# print heading #} {# check for error message #} {% if error_message %}
-      {{error_message}} {% endif %} {# print form #}
+      <h1>Log in</h1>
+      {# check for error message #} {% if error_message %}
+      <p style="color: var(--danger)">{{error_message}}</p>
+      {% endif %}
       <form action="" method="POST">
-        {# add Django security token #} {% csrf_token %} {{form}}
-        <button type="submit">Login</button>
+        {% csrf_token %}
+        <div class="form-field">{{form}}</div>
+        <button type="submit">Log in</button>
       </form>
     </div>
   </body>
