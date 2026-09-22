@@ -6,3 +6,7 @@ __pycache__
 
 # Database
 *.sqlite3
+
+# Backup files
+recipes_backup.json
+recipes_backup_23_recipes.json
