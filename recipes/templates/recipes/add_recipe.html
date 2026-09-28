@@ -25,7 +25,11 @@
       <a class="back-home_btn" href="{% url 'recipes:profile' %}">Profile</a>
       <a class="back-home_btn" href="{% url 'recipes:records' %}">Search</a>
       <a class="back-home_btn" href="{%url 'recipes:list' %}">List</a>
+      {% if user.is_authenticated %}
       <a class="logout_btn" href="{% url 'logout' %}">Log out</a>
+      {% else %}
+      <a class="login_btn" href="{% url 'login' %}">Log in</a>
+      {% endif %}
     </div>
 
     {% if messages %} {% for message in messages %}

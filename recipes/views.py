@@ -3,10 +3,10 @@ from django.shortcuts import render, redirect    # imported by default
 from django.views.generic import ListView, DetailView
 #import Recipe model
 from .models import Recipe
-# to protect class-based views
-from django.contrib.auth.mixins import LoginRequiredMixin
 # to protect function-based views
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
 from .forms import RecipesSearchForm, AddRecipeForm
@@ -15,27 +15,47 @@ from .utils import get_chart
 
 # Create your views here.
 def home(request):
+    # if the user is already logged in, skip the landing page and take
+    # them straight to their board instead of showing a "log in" prompt
+    if request.user.is_authenticated:
+        return redirect('recipes:list')
     return render(request, 'recipes/recipes_home.html')
 
 def profile(request):
     return render(request, "recipes/profile.html")
 
 
-class RecipeListView(LoginRequiredMixin, ListView):  # class-based view
+class RecipeListView(ListView):  # class-based view
     model = Recipe  # specify model
     template_name = 'recipes/recipes_list.html'  # specify template
 
 
-class RecipeDetailView(LoginRequiredMixin, DetailView):  # class-based view
+class RecipeDetailView(DetailView):  # class-based view
     model = Recipe  # specify model
     template_name = 'recipes/details.html'  # specify template
+
+
+# only accepts POST (never a plain link/GET) so a recipe can't be deleted
+# by, say, a crawler following a link — and login_required plus the
+# is_superuser check keeps it to just your own account
+@login_required
+@require_POST
+def delete_recipe(request, pk):
+    if not request.user.is_superuser:
+        messages.error(request, "You don't have permission to delete recipes.")
+        return redirect('recipes:list')
+
+    recipe = get_object_or_404(Recipe, pk=pk)
+    recipe_name = recipe.name
+    recipe.delete()
+    messages.success(request, f'"{recipe_name}" was deleted.')
+    return redirect('recipes:list')
 
 # define function-based view - records(records()
 
 # keep protected
 
 
-@login_required
 def records(request):
     # create an instance of RecipesSearchForm that you defined in recipes/forms.py
     form = RecipesSearchForm(request.POST or None)

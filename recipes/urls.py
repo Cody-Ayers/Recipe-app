@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, RecipeListView, RecipeDetailView, records, profile, add_recipe
+from .views import home, RecipeListView, RecipeDetailView, records, profile, add_recipe, delete_recipe
 
 app_name = 'recipes'
 
@@ -10,6 +10,8 @@ urlpatterns = [
     path('recipes/list/', RecipeListView.as_view(), name='list'),
     #Recipe details
     path('recipes/list/<pk>', RecipeDetailView.as_view(), name='detail'),
+    #Delete a recipe
+    path('recipes/list/<pk>/delete/', delete_recipe, name='delete_recipe'),
     #Search recipes
     path('recipes/search', records, name='records'),
     #Profile page

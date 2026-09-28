@@ -25,7 +25,11 @@
       <a class="back-home_btn" href="{% url 'recipes:records' %}">Search</a>
       <a class="back-home_btn" href="{% url 'recipes:add_recipe' %}">Add</a>
       <a class="back-home_btn" href="{% url 'recipes:profile' %}">Profile</a>
+      {% if user.is_authenticated %}
       <a class="logout_btn" href="{% url 'logout' %}">Log out</a>
+      {% else %}
+      <a class="login_btn" href="{% url 'login' %}">Log in</a>
+      {% endif %}
     </div>
 
     <div class="list_table">
@@ -33,6 +37,14 @@
         Tonight's board
       </p>
       <h1>What's cooking</h1>
+
+      {% if messages %}
+      <div style="margin-bottom: 12px">
+        {% for message in messages %}
+        <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
 
       <div class="recipe-list">
         {% for object in object_list %}
@@ -49,6 +61,19 @@
             <div class="cat">{{object.calculate_difficulty}}</div>
           </div>
           <div class="time">{{object.cooking_time}} min</div>
+          {% if user.is_superuser %}
+          <form
+            action="{% url 'recipes:delete_recipe' object.pk %}"
+            method="POST"
+            class="delete-form"
+            onsubmit="return confirm('Delete {{ object.name|escapejs }}? This can\'t be undone.');"
+          >
+            {% csrf_token %}
+            <button type="submit" class="delete-btn" title="Delete recipe">
+              &times;
+            </button>
+          </form>
+          {% endif %}
         </div>
         {% empty %}
         <p>Nothing on the board yet. Add a recipe to get started.</p>

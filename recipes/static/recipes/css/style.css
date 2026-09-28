@@ -101,6 +101,11 @@ a {
   text-align: left;
 }
 
+.Profile {
+  width: min(92%, 640px);
+  text-align: left;
+}
+
 /* ---------- buttons ---------- */
 .list_btn,
 .login_btn,
@@ -190,6 +195,34 @@ button[type="submit"]:hover {
   flex: none;
 }
 
+.delete-form {
+  flex: none;
+  margin: 0;
+}
+
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background-color: transparent;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: var(--ink);
+  filter: none;
+}
+
 /* ---------- detail / ticket ---------- */
 .ticket-photo {
   width: 100%;
@@ -259,6 +292,10 @@ select:focus {
 /* ---------- messages / success ---------- */
 .success {
   color: var(--accent);
+}
+
+.error {
+  color: var(--danger);
 }
 
 /* ---------- search results table ---------- */
