@@ -20,6 +20,8 @@
 
   <body class="body">
     <div class="auth">
+      <a class="auth-brand" href="{% url 'recipes:home' %}">The Recipe Hub</a>
+      <p class="auth-tagline">Tonight's board is waiting.</p>
       <h1>Sign up</h1>
       {% if form.errors %}
       <p style="color: var(--danger)">
@@ -34,6 +36,9 @@
       <p style="margin-top: 16px; font-size: 13px; color: var(--muted)">
         Already have an account?
         <a href="{% url 'login' %}">Log in</a>
+      </p>
+      <p class="auth-browse">
+        <a href="{% url 'recipes:list' %}">Just looking? Browse recipes &rarr;</a>
       </p>
     </div>
   </body>

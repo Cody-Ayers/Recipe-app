@@ -51,8 +51,23 @@
         src="data:image/png;base64, {{chart|safe}}"
         alt="chart"
       />
+      {% elif recipe_diff %}
+      <div class="empty-state">
+        <h3>No {{ recipe_diff }} recipes yet</h3>
+        <p>
+          Nothing on the board matches that difficulty. Try a different one,
+          or <a href="{% url 'recipes:add_recipe' %}">add a recipe</a>.
+        </p>
+      </div>
       {% else %}
-      <h3 style="margin-top: 24px">No data yet — run a search above.</h3>
+      <div class="empty-state">
+        <h3>Pick a difficulty to get started</h3>
+        <p>
+          Choose a difficulty and a chart type, then hit Search. You'll get a
+          table of matching recipes plus a chart of their cooking times,
+          built with Pandas and Matplotlib.
+        </p>
+      </div>
       {% endif %}
     </div>
   </body>

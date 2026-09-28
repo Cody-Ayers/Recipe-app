@@ -20,8 +20,8 @@ DIFFIC__CHOICES = (  # specify choices as a tuple
 
 
 class RecipesSearchForm(forms.Form):
-    recipe_diff = forms.ChoiceField(choices=DIFFIC__CHOICES)
-    chart_type = forms.ChoiceField(choices=CHART__CHOICES)
+    recipe_diff = forms.ChoiceField(choices=DIFFIC__CHOICES, label='Difficulty')
+    chart_type = forms.ChoiceField(choices=CHART__CHOICES, label='Chart type')
 
 class AddRecipeForm(forms.ModelForm):
     class Meta:

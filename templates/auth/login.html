@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RecipeApp | Home</title>
+    <title>RecipeApp | Log in</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +20,8 @@
 
   <body class="body">
     <div class="auth">
+      <a class="auth-brand" href="{% url 'recipes:home' %}">The Recipe Hub</a>
+      <p class="auth-tagline">Tonight's board is waiting.</p>
       <h1>Log in</h1>
       {# check for error message #} {% if error_message %}
       <p style="color: var(--danger)">{{error_message}}</p>
@@ -32,6 +34,9 @@
       <p style="margin-top: 16px; font-size: 13px; color: var(--muted)">
         New here?
         <a href="{% url 'signup' %}">Create an account</a>
+      </p>
+      <p class="auth-browse">
+        <a href="{% url 'recipes:list' %}">Just looking? Browse recipes &rarr;</a>
       </p>
     </div>
   </body>

@@ -321,3 +321,43 @@ table.dataframe th {
   border-radius: 4px;
   border: 1px solid var(--line);
 }
+
+
+/* ---------- auth pages branding ---------- */
+.auth-brand {
+  display: block;
+  font-family: "Permanent Marker", cursive;
+  color: var(--accent);
+  font-size: 26px;
+  text-decoration: none;
+}
+
+.auth-tagline {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 4px 0 18px;
+}
+
+.auth-browse {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+/* ---------- empty states ---------- */
+.empty-state {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+}
+
+.empty-state h3 {
+  margin: 0 0 6px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
